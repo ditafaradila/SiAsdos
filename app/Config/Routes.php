@@ -36,7 +36,7 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/home', 'AsdosController::index');
+$routes->get('/jadwal', 'AsdosController::index');
 $routes->get('/create','AsdosController::create');
 $routes->post('/store','AsdosController::store');
 $routes->get('/edit/(:num)','AsdosController::edit/$1');

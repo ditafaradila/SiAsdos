@@ -21,13 +21,13 @@ class Pages extends BaseController
         return view(('pages/' . $page), $data);
     }
 
-    public function home(){
+    public function jadwal(){
         $asdosModel = new Asdos();
         $asdos = $asdosModel -> findAll();
-        $data = ['title' => 'Home',
+        $data = ['title' => 'Jadwal',
         'jadwal' => $asdos
     ];
-        return view('pages/home', $data);
+        return view('pages/jadwal', $data);
     }
 
     public function test(){

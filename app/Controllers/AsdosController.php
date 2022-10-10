@@ -16,7 +16,19 @@ class AsdosController extends BaseController
             'title' => 'Asdos',
             'asdos' => $asdos
         ];
-        return view('pages/home', $data);
+        return view('pages/jadwal', $data);
+    }
+
+    public function jadwal()
+    {
+        $asdosModel = new Asdos();
+        $asdos = $asdosModel->findAll();
+
+        $data = [
+            'title' => 'Asdos',
+            'asdos' => $asdos
+        ];
+        return view('pages/jadwal', $data);
     }
 
     public function create(){
@@ -39,7 +51,7 @@ class AsdosController extends BaseController
         ];
 
         $asdosModel->save($data);
-        return redirect()->to('/home');
+        return redirect()->to('pages/jadwal');
     }
 
     public function edit($id){
@@ -59,7 +71,7 @@ class AsdosController extends BaseController
         $asdosModel = new Asdos();
         $asdosModel->delete($id);
 
-        return redirect()->to('pages/home');
+        return redirect()->to('pages/jadwal');
     }
 
     public function update($id){
@@ -85,7 +97,7 @@ class AsdosController extends BaseController
         ];
 
         $asdosModel->update($id, $data);
-        return redirect()->to('/home');
+        return redirect()->to('/jadwal');
     }
 
 }

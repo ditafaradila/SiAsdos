@@ -37,7 +37,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Left navbar links -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a href="/home" class="nav-link">Home</a>
+              <a href="/jadwal" class="nav-link">Jadwal</a>
             </li>
             <li class="nav-item">
               <a href="/materi" class="nav-link">Materi</a>
