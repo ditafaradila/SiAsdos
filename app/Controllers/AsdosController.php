@@ -16,21 +16,18 @@ class AsdosController extends BaseController
             'title' => 'Asdos',
             'asdos' => $asdos
         ];
-        return view('asdos/beranda', $data);
+        return view('pages/home', $data);
+    }
+
+    public function create(){
+        $data = [
+            'title' => 'Create Jadwal'
+        ];
+        
+        return view('admin/create', $data);
     }
 
     public function store(){
-        if(!$this->validate([
-            'jam' => 'required',
-            'senin' => 'required',
-            'selasa' => 'required',
-            'rabu' => 'required',
-            'kamis' => 'required',
-            'jumat' => 'required',
-        ])){
-            return redirect()->to('/create');
-        }
-
         $asdosModel = new Asdos();
         $data = [
             'jam' => $this->request->getPost('jam'),
@@ -42,7 +39,53 @@ class AsdosController extends BaseController
         ];
 
         $asdosModel->save($data);
-        return redirect()->to('/beranda');
+        return redirect()->to('/home');
+    }
+
+    public function edit($id){
+        $asdosModel = new Asdos();
+        $asdos = $asdosModel->find($id);
+
+        $data = [
+            'title' => 'Edit Jadwal',
+            'jadwal' => $asdos
+        ];
+
+        return view('admin/edit', $data);
+    }
+
+    public function delete($id)
+    {
+        $asdosModel = new Asdos();
+        $asdosModel->delete($id);
+
+        return redirect()->to('pages/home');
+    }
+
+    public function update($id){
+        if(!$this->validate([
+            'jam' => 'required',
+            'senin' => 'required',
+            'selasa' => 'required',
+            'rabu' => 'required',
+            'kamis' => 'required',
+            'jumat' => 'required'
+        ])){
+            return redirect()->to('/edit/' .$id);
+        }
+
+        $asdosModel = new Asdos();
+        $data = [
+            'jam' => $this->request->getVar('jam'),
+            'senin' => $this->request->getVar('senin'),
+            'selasa' => $this->request->getVar('selasa'),
+            'rabu' => $this->request->getVar('rabu'),
+            'kamis' => $this->request->getVar('kamis'),
+            'jumat' => $this->request->getVar('jumat')
+        ];
+
+        $asdosModel->update($id, $data);
+        return redirect()->to('/home');
     }
 
 }

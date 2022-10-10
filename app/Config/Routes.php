@@ -36,9 +36,19 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/', 'Pages::login');
-$routes->get('/asdos','AsdosController::index');
-$routes->get('/(:any)','Pages::view/$1');
+$routes->get('/home', 'AsdosController::index');
+$routes->get('/create','AsdosController::create');
+$routes->post('/store','AsdosController::store');
+$routes->get('/edit/(:num)','AsdosController::edit/$1');
+$routes->post('/update/(:num)','AsdosController::update/$1');
+$routes->delete('/delete/(:num)','AsdosController::delete/$1');
+$routes->delete('/pengumuman_view', 'Pengumuman::hapus');
+$routes->post('/pengumuman_view', 'Pengumuman::edit');
+$routes->post('/pengumuman_view', 'Pengumuman::simpan');
+$routes->post('/pengumuman_view', 'Pengumuman::index');
+$routes->get('/index','Pages::index');
+$routes->get('/(:any)', 'Pages::view/$1');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

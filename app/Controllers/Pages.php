@@ -21,28 +21,13 @@ class Pages extends BaseController
         return view(('pages/' . $page), $data);
     }
 
-    public function materi(){
-        $data['title'] = 'Materi';
-        return view('materi', $data);
-    }
-    
-    public function profile(){
-        $data['title'] = 'Profile';
-        return view('profile', $data);
-    }
-
     public function home(){
         $asdosModel = new Asdos();
-        $asds = $asdosModel -> findAll();
+        $asdos = $asdosModel -> findAll();
         $data = ['title' => 'Home',
-        'jadwal' => $asds
+        'jadwal' => $asdos
     ];
         return view('pages/home', $data);
-    }
-
-    public function login(){
-        $data['title'] = 'Login';
-        return view('login', $data);
     }
 
     public function test(){

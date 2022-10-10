@@ -40,10 +40,12 @@ class Jadwal extends Migration
                 'constraint' => '30',
             ],
         ]);
+        $this->forge->addKey('id', true);
+        $this->forge->createTable('jadwal');
     }
 
     public function down()
     {
-        
+        $this->forge->dropTable('blog');
     }
 }
