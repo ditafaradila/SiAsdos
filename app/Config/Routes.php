@@ -47,6 +47,10 @@ $routes->post('/pengumuman_view', 'Pengumuman::edit');
 $routes->post('/pengumuman_view', 'Pengumuman::simpan');
 $routes->post('/pengumuman_view', 'Pengumuman::index');
 $routes->get('/index','Pages::index');
+$routes->post('/create', 'PengumumanControl::create');
+$routes->post('/store', 'PengumumanControl::store');
+$routes->get('/pages', 'PengumumanControl::index');
+$routes->get('/PengumumanLain', 'PengumumanControl::PengumumanLain');
 $routes->get('/(:any)', 'Pages::view/$1');
 
 /*
