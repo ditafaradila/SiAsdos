@@ -15,11 +15,11 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form id="quickForm" action="<?= base_url('/create') ?>" method="post">
+                        <form action="<?= base_url('/create') ?>" method="post">
                             <div class="card-body">
                                 <div class="form-group">
                                     <label>Title Anouncement</label>
-                                    <input type="text" class="form-control is-valid" placeholder="Enter ..." name="judul" id="judul">
+                                    <input type="text" class="form-control is-valid" placeholder="Enter ..." name="judul" id="judul" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label for="deskripsi" class="form-label">Content of Anouncement</label>
