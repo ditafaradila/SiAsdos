@@ -48,8 +48,11 @@ $routes->post('/pengumuman_view', 'Pengumuman::simpan');
 $routes->post('/pengumuman_view', 'Pengumuman::index');
 $routes->get('/index','Pages::index');
 $routes->post('/create', 'PengumumanControl::create');
-$routes->post('/store', 'PengumumanControl::store');
+$routes->get('/store', 'PengumumanControl::store');
 $routes->get('/pages', 'PengumumanControl::index');
+$routes->get('/edit/(:num)', 'PengumumanControl::edit/$1');
+$routes->post('/update/(:num)', 'PengumumanControl::update/$1');
+$routes->delete('/delete/(:num)', 'PengumumanControl::delete/$1');
 $routes->get('/PengumumanLain', 'PengumumanControl::PengumumanLain');
 $routes->get('/(:any)', 'Pages::view/$1');
 
