@@ -65,6 +65,31 @@ class PengumumanControl extends BaseController
             'title' => 'Edit Data'
         ];
 
-        return view('pages/', $data);
+        return view('pages/EditPengumuman', $data);
+    }
+    public function delete($id)
+    {
+        $AnnounceModel = new PengumumanModel();
+        $AnnounceModel->delete($id);
+        return redirect()->to('/pages');
+    }
+    public function update($id)
+    {
+        if (!$this->validate([
+            'judul' => 'required|string',
+            'deskripsi' => 'required',
+        ])) {
+            return redirect()->to('/edit/' . $id);
+        }
+        $Lain = new PengumumanModel();
+        $data = [
+            'judul' => $this->request->getPost('judul'),
+            'deskripsi' => $this->request->getPost('deskripsi'),
+            'created_at' => date('Y-m-d H:i:s'),
+            'update_at' => date('Y-m-d H:i:s'),
+        ];
+        $Lain->update($id, $data);
+
+        return redirect()->to('/pages');
     }
 }
