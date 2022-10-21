@@ -7,7 +7,8 @@ use App\Models\Jadwal;
 
 class JadwalController extends BaseController
 {
-    public function index(){
+    public function index()
+    {
         $jadwalModel = new Jadwal();
         $asdos = $jadwalModel->findAll();
 
@@ -18,7 +19,8 @@ class JadwalController extends BaseController
         return view('pages/home', $data);
     }
 
-    public function edit($id){
+    public function edit($id)
+    {
         $jadwalModel = new Jadwal();
         $asdos = $jadwalModel->find($id);
 
@@ -30,7 +32,8 @@ class JadwalController extends BaseController
         return view('pages/editjadwal', $data);
     }
 
-    public function update($id){
+    public function update($id)
+    {
         $jadwalModel = new Jadwal();
         $data = [
             'jam' => $this->request->getVar('jam'),
