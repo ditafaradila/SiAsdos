@@ -2,6 +2,8 @@
 
 namespace Config;
 
+use function PHPUnit\Framework\any;
+
 // Create a new instance of our RouteCollection class.
 $routes = Services::routes();
 
@@ -35,14 +37,23 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+
+//nama pages -> nama function
+$routes->post('/create', 'PengumumanControl::create');
+$routes->get('/store', 'PengumumanControl::store');
+$routes->get('/pages', 'PengumumanControl::index');
+$routes->get('/edit/(:num)', 'PengumumanControl::edit/$1');
+$routes->post('/update/(:num)', 'PengumumanControl::update/$1');
+$routes->delete('/delete/(:num)', 'PengumumanControl::delete/$1');
+$routes->get('/PengumumanLain', 'PengumumanControl::PengumumanLain');
 $routes->get('/', 'Home::index');
 $routes->get('/home', 'JadwalController::index');
 $routes->get('/edit/(:num)', 'JadwalController::edit/$1');
 $routes->post('/update/(:num)', 'JadwalController::update/$1');
 $routes->get('/jadwalPiket', 'JadwalPiketController::index');
-$routes->get('/buat', 'JadwalPiketController::create');
+$routes->get('/create', 'JadwalPiketController::create');
 $routes->post('/store', 'JadwalPiketController::store');
-$routes->get('/ubah/(:num)', 'JadwalPiketController::edit/$1');
+$routes->get('/edit/(:num)', 'JadwalPiketController::edit/$1');
 $routes->post('/update/(:num)', 'JadwalPiketController::update/$1');
 $routes->delete('/delete/(:num)', 'JadwalPiketController::delete/$1');
 $routes->post('/create', 'PengumumanController::create');
@@ -52,11 +63,11 @@ $routes->post('/storeP', 'PengumumanController::storeP');
 $routes->get('editP/(:num)', 'PengumumanController::editP/$1');
 $routes->post('updateP/(:num)', 'PengumumanController::updateP/$1');
 $routes->get('deleteP/(:num)', 'PengumumanController::deleteP/$1');
-$routes->post('/create', 'PengumumanControl::create');
-$routes->get('/pages', 'PengumumanControl::index');
-$routes->get('/PengumumanLain', 'PengumumanControl::PengumumanLain');
-$routes->get('/(:any)', 'Pages::view/$1');
+$routes->get('/absen', 'AbsenController::index');
+$routes->get('/CAbsen', 'AbsenController::CAbsen');
+$routes->post('/storeAbsen', 'AbsenController::storeAbsen');
 
+$routes->get('/(:any)', 'Pages::view/$1');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
