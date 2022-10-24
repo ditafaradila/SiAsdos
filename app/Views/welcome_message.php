@@ -19,13 +19,13 @@
                 <div class="col" align="center">
                     <div class="p-3 border bg-light">
                         <img src="/assets/AdminLTE/dist/img/lecturer.jpg" class="rounded mx-auto d-block" height="150px">
-                        <a href="/asdos" type="button" class="btn btn-secondary btn-sm">Asisten Dosen</a>
+                        <a href="/asdos_login" type="button" class="btn btn-secondary btn-sm">Asisten Dosen</a>
                     </div>
                 </div>
                 <div class="col" align="center">
                     <div class="p-3 border bg-light">
                         <img src="/assets/AdminLTE/dist/img/admin.jpg" class="rounded mx-auto d-block" height="150px">
-                        <a href="/admin" type="button" class="btn btn-secondary btn-sm"> Admin </a>
+                        <a href="/admin_login" type="button" class="btn btn-secondary btn-sm"> Admin </a>
                     </div>
                 </div>
             </div>

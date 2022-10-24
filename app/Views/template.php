@@ -21,7 +21,7 @@
   <!-- Site wrapper -->
   <div class="wrapper">
     <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand navbar-white navbar-light bg-primary">
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light bg-info">
       <div class="container">
         <!-- Left navbar links -->
         <ul class="navbar-nav">
@@ -34,11 +34,11 @@
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4 bg-primary">
+    <aside class="main-sidebar sidebar-dark-primary elevation-4 bg-info">
       <!-- Brand Logo -->
       <a href="#" class="brand-link">
-        <img src="/assets/AdminLTE/dist/img/person.jpg" alt="Person Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">Sistem Informasi</span>
+        <img src="/assets/AdminLTE/dist/img/unila.jpg" alt="Person Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light">SISTEM INFORMASI</span>
       </a>
 
       <!-- Sidebar -->
@@ -49,7 +49,7 @@
             <img src="/assets/AdminLTE/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="#" class="d-block">Admin</a>
+            <a href="#" class="d-block"><?= session()->get('nama'); ?></a>
           </div>
         </div>
 
@@ -103,6 +103,14 @@
                   </a>
                 </li>
               </ul>
+            </li>
+            <li class="nav-item">
+              <a href="/absen" class="nav-link">
+                <i class="nav-icon fas fa-tasks"></i>
+                <p>
+                  Absensi
+                </p>
+              </a>
             </li>
           </ul>
         </nav>
