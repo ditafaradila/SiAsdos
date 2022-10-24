@@ -39,6 +39,14 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 
 //nama pages -> nama function
+$routes->get('/admin_login', 'LoginAdmin::index');
+$routes->post('/login/process', 'LoginAdmin::process');
+$routes->get('/logout', 'LoginAdmin::logout');
+$routes->get('/asdos_login', 'LoginAsdos::index');
+$routes->post('/login/processs', 'LoginAsdos::processs');
+$routes->get('/logout', 'LoginAsdos::logout');
+$routes->get('/Ashome', 'AsdosController::index');
+$routes->get('/profile', 'Profile::index');
 $routes->post('/create', 'PengumumanControl::create');
 $routes->get('/store', 'PengumumanControl::store');
 $routes->get('/pages', 'PengumumanControl::index');
