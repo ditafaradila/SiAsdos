@@ -46,10 +46,10 @@
         <!-- Sidebar user (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
-            <img src="/assets/AdminLTE/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+            <img src="/assets/AdminLTE/dist/img/rs.jpeg" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="#" class="d-block"><?= session()->get('nama'); ?></a>
+            <a href="/profile" class="d-block"><?= session()->get('nama'); ?></a>
           </div>
         </div>
 
@@ -59,64 +59,34 @@
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="Ashome" class="nav-link">
                 <i class="nav-icon fas fa-calendar"></i>
                 <p>
                   Jadwal
-                  <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="/home" class="nav-link">
-                    <i class="nav-icon"></i>
-                    <p>Jadwal AsDos</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="/jadwalPiket" class="nav-link">
-                    <i class="nav-icon"></i>
-                    <p>Jadwal Piket</p>
-                  </a>
-                </li>
-              </ul>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="materi" class="nav-link">
                 <i class="nav-icon fas fa-bell"></i>
                 <p>
-                  Pengumuman
-                  <i class="right fas fa-angle-left"></i>
+                  Materi
                 </p>
               </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="/pengumuman" class="nav-link">
-                    <i class="nav-icon"></i>
-                    <p>Pengumuman AsDos</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="/pengumumanLain" class="nav-link">
-                    <i class="nav-icon"></i>
-                    <p>Pengumuman Lainnya</p>
-                  </a>
-                </li>
-              </ul>
             </li>
             <li class="nav-item">
-              <a href="/absen" class="nav-link">
+              <a href="/nilai" class="nav-link">
+                <i class="nav-icon fas fa-tasks"></i>
+                <p>
+                  Nilai
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/CAbsen" class="nav-link">
                 <i class="nav-icon fas fa-tasks"></i>
                 <p>
                   Absensi
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="/profile" class="nav-link">
-                <i class="nav-icon fas fa-user"></i>
-                <p>
-                  Profile
                 </p>
               </a>
             </li>
