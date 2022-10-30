@@ -18,27 +18,27 @@ class Absen extends Migration
             ],
             'nama_lengkap' => [
                 'type' => 'VARCHAR',
-                'constraint' => '30',
+                'constraint' => '50',
             ],
             'npm_asdos' => [
                 'type' => 'VARCHAR',
-                'constraint' => '10',
+                'constraint' => '15',
             ],
             'mata_kuliah' => [
                 'type' => 'VARCHAR',
-                'constraint' => '30',
+                'constraint' => '40',
             ],
             'ruang' => [
                 'type' => 'VARCHAR',
-                'constraint' => '20',
+                'constraint' => '30',
             ],
             'kelas_praktikan' => [
                 'type' => 'VARCHAR',
-                'constraint' => '10',
+                'constraint' => '30',
             ],
             'hari' => [
                 'type' => 'VARCHAR',
-                'constraint' => '10',
+                'constraint' => '30',
             ],
             'jam_masuk' => [
                 'type' => 'TIME',
@@ -46,11 +46,7 @@ class Absen extends Migration
             ],
             'kondisi_lab' => [
                 'type' => 'VARCHAR',
-                'constraint' => '20',
-            ],
-            'created' => [
-                'type' => 'DATETIME',
-                'null' => 'true',
+                'constraint' => '30',
             ],
         ]);
         $this->forge->addKey('id', true);
