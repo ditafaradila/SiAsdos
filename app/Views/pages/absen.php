@@ -15,7 +15,7 @@
                         <thred>
                             <tr>
                                 <th>
-                                    <center>ID</center>
+                                    <center>NO</center>
                                 </th>
                                 <th>
                                     <center>Nama Lengkap</center>
@@ -39,11 +39,9 @@
                                     <center>Jam Masuk</center>
                                 </th>
                                 <th>
-                                    <center>Kondisi Lab</center>
+                                    <center>Kondisi Ruangan</center>
                                 </th>
-                                <th>
-                                    <center>Waktu Absensi</center>
-                                </th>
+
                             </tr>
                         </thred>
                         <tbody>
@@ -79,9 +77,7 @@
                                     <td>
                                         <center><?= $absenn['kondisi_lab'] ?>
                                     </td>
-                                    <td>
-                                        <center><?= $absenn['created'] ?>
-                                    </td>
+
 
                                 </tr>
                             <?php endforeach; ?>
