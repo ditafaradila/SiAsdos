@@ -64,18 +64,30 @@ $routes->post('/store', 'JadwalPiketController::store');
 $routes->get('/edit/(:num)', 'JadwalPiketController::edit/$1');
 $routes->post('/update/(:num)', 'JadwalPiketController::update/$1');
 $routes->delete('/delete/(:num)', 'JadwalPiketController::delete/$1');
-$routes->post('/create', 'PengumumanController::create');
+
 $routes->get('pengumuman', 'PengumumanController::index');
 $routes->get('/createP', 'PengumumanController::createP');
 $routes->post('/storeP', 'PengumumanController::storeP');
 $routes->get('editP/(:num)', 'PengumumanController::editP/$1');
 $routes->post('updateP/(:num)', 'PengumumanController::updateP/$1');
 $routes->get('deleteP/(:num)', 'PengumumanController::deleteP/$1');
+
 $routes->get('/absen', 'AbsenController::index');
-$routes->get('/CAbsen', 'AbsenController::CAbsen');
-$routes->post('/storeAbsen', 'AbsenController::storeAbsen');
+$routes->get('/absenSelesai', 'AbsenController::absenSelesai');
+$routes->get('/CAbsen', 'AbsenController::createAbsen');
+$routes->post('/simpanAbsen', 'AbsenController::simpanAbsen');
+$routes->get('/EAbsen/(:num)', 'AbsenController::editAbsen/$1');
+$routes->post('/updateAbsen/(:num)', 'AbsenController::updateAbsen/$1');
+
+$routes->get('/materi', 'MateriController::index');
+$routes->get('/Cmateri', 'MateriController::Create');
+$routes->post('/Store', 'MateriController::Store');
+$routes->get('/Emateri/(:num)', 'MateriController::Edit/$1');
+$routes->post('/Update/(:num)', 'MateriController::Update/$1');
+$routes->delete('/Delete/(:num)', 'MateriController::Delete/$1');
 
 $routes->get('/(:any)', 'Pages::view/$1');
+$routes->get('/(:any)', 'PagesAsdos::view/$1');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
