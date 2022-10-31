@@ -1,19 +1,8 @@
 <?= $this->extend('pagesAsdos/Astemplate') ?>
 <?= $this->section('content') ?>
 
-<h3>Materi Asisten Dosen</h3>
-<div class="btn-group">
-    <button type="button" class="btn btn-warning">Semester</button>
-    <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-expanded="false">
-        <span class="sr-only">Toggle Dropdown</span>
-    </button>
-    <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Semester 1</a>
-        <a class="dropdown-item" href="#">Semester 3</a>
-        <a class="dropdown-item" href="#">Semester 5</a>
-        <a class="dropdown-item" href="#">Semester 7</a>
-    </div>
-</div>
+<h3 align="center">Materi Asisten Dosen</h3>
+
 <div>
     <a href="/Cmateri" type="button" class="btn btn-primary"><i class="fa fa-plus"></i> Create</a>
     <table class="table table-striped">
@@ -41,7 +30,7 @@
                     <td><?= $mtr['berkas'] ?></td>
                     <td>
                         <div class="d-flex">
-                            <a href="/Emateri/<?= $mtr['id'] ?>" type="button" class="btn btn-warning"><i class="fa fa-pen"></i>Edit</a>
+                            <!-- <a href="/Emateri/<?= $mtr['id'] ?>" type="button" class="btn btn-warning"><i class="fa fa-pen"></i>Edit</a> -->
                             <form method="POST" action="/Delete/<?= $mtr['id'] ?>">
                                 <input type="hidden" name="_method" value="DELETE">
                                 <button type="submit" name="submit" class="btn btn-danger"><i class="fa fa-trash"></i>Delete</button>

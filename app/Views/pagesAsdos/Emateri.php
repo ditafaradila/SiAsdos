@@ -1,4 +1,4 @@
-<?= $this->extend('pagesAsdos/Astemplate') ?>
+<!-- <?= $this->extend('pagesAsdos/Astemplate') ?>
 <?= $this->section('content') ?>
 
 <form method="POST" action="/Update/<?= $materi['id'] ?>" enctype="multipart/form-data">
@@ -21,15 +21,12 @@
                 <input type="text" class="form-control" name="semester" id="semester" aria-describedby="semester" value="<?= $materi['semester'] ?>">
             </div>
             <div class="mb-3">
-                <label for="berkas" class="form-label">File</label>
-                <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="berkas" name="berkas" aria-describedby="berkas" value="<?= $materi['berkas'] ?>">
-                    <label class="custom-file-label" for="berkas">Choose file</label>
-                </div>
+                <form>
+                    <label for="berkas" class="form-label">File</label>
+                    <input type="file" class="form-control-file" name="berkas" id="berkas" aria-describedby="berkas" value="<?= $materi['berkas'] ?>">
+                </form>
             </div>
-        </div>
-    </div>
-    <button type="submit" class="btn btn-dark"><i class="fa fa-paper-plane"></i> Submit</button>
 </form>
-
-<?= $this->endSection() ?>
+<button type="submit" class="btn btn-dark"><i class="fa fa-paper-plane"></i> Submit</button>
+</form>
+<?= $this->endSection() ?> -->
