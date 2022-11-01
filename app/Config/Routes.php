@@ -84,7 +84,7 @@ $routes->post('/buat', 'Nilaicontrol::buat');
 $routes->get('/tambah', 'Nilaicontrol::tambah');
 $routes->get('/pagesNilai', 'Nilaicontrol::index');
 $routes->get('/editNilai/(:num)', 'NilaiControl::edit/$1');
-$routes->post('/ubah/(:num)', 'Nilaicontrol::update/$1');
+$routes->post('/ubah/(:num)', 'Nilaicontrol::ubah/$1');
 $routes->delete('/deleteNilai/(:num)', 'NilaiControl::delete/$1');
 $routes->get('/PengumumanLain', 'Nilaicontrol::PengumumanLain');
 $routes->get('/', 'Home::index');
