@@ -19,44 +19,29 @@ class Profile extends BaseController
         return view('pagesAsdos/profile', $data);
     }
 
-    public function editProf()
-    {
+    public function edit(){
+        $profileModel = new AsdosModel();
+        $data['user_asdos'] = $profileModel->where('npm', session('npm'))->first();
+
         $data = [
-            'title' => 'Edit Data Profile'
+            'title' => 'Profile Asdos',
+            'user_asdos' => $data
         ];
-        
         return view('pagesAsdos/editProfile', $data);
     }
 
-    public function edit($npm){
-        $profileModel = new AsdosModel();
-        $asdos = $profileModel->find($npm);
-
+    public function update($npm){
+        if(!$this->validate([
+            'username' => 'required',
+        ])){
+            return redirect()->to('/editProfile');
+        }
+        $asdosModel = new AsdosModel();
         $data = [
-            'title' => 'Edit Data profile',
-            'user_asdos' => $asdos
+            'username' => $this -> request -> getVar('username'),
         ];
 
-        return view('pagesAsdos/editProfile', $data);
-    }
-
-    public function update($npm)
-    {
-        $profileModel = new AsdosModel();
-        $data = [
-            'nama' => $this->request->getVar('nama'),
-            'npm' => $this->request->getPost('npm'),
-            'prodi' => $this->request->getPost('prodi'),
-            'tahun_kurikulum' => $this->request->getVar('tahun_kurikulum'),
-            'status' => $this->request->getVar('status'),
-            'jk' => $this->request->getVar('jk'),
-            'tempatllahir' => $this->request->getPost('tempatllahir'),
-            'tanggallahir' => $this->request->getVar('tanggallahir'),
-            'email' => $this->request->getVar('email'),
-            'alamat' => $this->request->getVar('alamat')
-        ];
-
-        $profileModel->update($npm, $data);
-        return redirect()->to('pagesAsdos/profile');
+        $asdosModel -> update($npm, $data);
+        return redirect()->to('/editProfile');
     }
 }
