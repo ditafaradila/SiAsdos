@@ -79,6 +79,16 @@ $routes->post('/simpanAbsen', 'AbsenController::simpanAbsen');
 $routes->get('/EAbsen/(:num)', 'AbsenController::editAbsen/$1');
 $routes->post('/updateAbsen/(:num)', 'AbsenController::updateAbsen/$1');
 
+$routes->get('/Nilai', 'Nilaicontrol::Nilai');
+$routes->post('/buat', 'Nilaicontrol::buat');
+$routes->get('/tambah', 'Nilaicontrol::tambah');
+$routes->get('/pagesNilai', 'Nilaicontrol::index');
+$routes->get('/editNilai/(:num)', 'NilaiControl::edit/$1');
+$routes->post('/ubah/(:num)', 'Nilaicontrol::update/$1');
+$routes->delete('/deleteNilai/(:num)', 'NilaiControl::delete/$1');
+$routes->get('/PengumumanLain', 'Nilaicontrol::PengumumanLain');
+$routes->get('/', 'Home::index');
+
 $routes->get('/materi', 'MateriController::index');
 $routes->get('/Cmateri', 'MateriController::Create');
 $routes->post('/Store', 'MateriController::Store');
