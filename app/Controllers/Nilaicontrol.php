@@ -75,12 +75,12 @@ class Nilaicontrol extends BaseController
     public function ubah($id)
     {
         if (!$this->validate([
-            'mk' => $this->request->getPost('mk'),
-            'kurikulum' => $this->request->getPost('kurikulum'),
-            'nama' => $this->request->getPost('nama'),
-            'npm' => $this->request->getPost('npm'),
-            'kelas' => $this->request->getPost('kelas'),
-            'nilai' => $this->request->getPost('nilai'),
+            'mk' => 'required|string',
+            'kurikulum' => 'required|string',
+            'nama' => 'required|string',
+            'npm' => 'required|numeric',
+            'kelas' => 'required|string',
+            'nilai' => 'required|numeric',
         ])) {
             return redirect()->to('/edit/' . $id);
         }
@@ -93,8 +93,8 @@ class Nilaicontrol extends BaseController
             'kelas' => $this->request->getPost('kelas'),
             'nilai' => $this->request->getPost('nilai'),
         ];
-        $Lain->ubah($id, $data);
+        $Lain->update($id, $data);
 
-        return redirect()->to('/pagesAsdos');
+        return redirect()->to('/pagesNilai');
     }
 }
