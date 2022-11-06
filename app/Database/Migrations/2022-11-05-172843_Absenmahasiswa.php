@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Absen extends Migration
+class Absenmahasiswa extends Migration
 {
     public function up()
     {
@@ -16,13 +16,13 @@ class Absen extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'nama_lengkap' => [
+            'namaMhs' => [
                 'type' => 'VARCHAR',
-                'constraint' => '50',
+                'constraint' => '30',
             ],
-            'npm_asdos' => [
+            'npmMhs' => [
                 'type' => 'VARCHAR',
-                'constraint' => '15',
+                'constraint' => '30',
             ],
             'mata_kuliah' => [
                 'type' => 'VARCHAR',
@@ -44,21 +44,17 @@ class Absen extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => '30',
             ],
-            'kondisi' => [
-                'type' => 'VARCHAR',
-                'constraint' => '30',
-            ],
             'semester' => [
                 'type' => 'VARCHAR',
                 'constraint' => '30',
             ],
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->createTable('absen');
+        $this->forge->createTable('absenmahasiswa');
     }
 
     public function down()
     {
-        $this->forge->dropTable('absen');
+        //
     }
 }
