@@ -105,12 +105,27 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a href="/absen" class="nav-link">
-                <i class="nav-icon fas fa-tasks"></i>
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-list-alt"></i>
                 <p>
-                  Absensi
+                  Rekapan Absensi
+                  <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="/absen" class="nav-link">
+                    <i class="nav-icon"></i>
+                    <p>Absen Asdos</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/absenMhs" class="nav-link">
+                    <i class="nav-icon"></i>
+                    <p>Absen Mahasiswa</p>
+                  </a>
+                </li>
+              </ul>
             </li>
           </ul>
         </nav>
