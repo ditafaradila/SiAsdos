@@ -4,6 +4,14 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\Absen;
+use App\Models\Hari;
+use App\Models\MataKuliah;
+use App\Models\Ruang;
+use App\Models\Kelas;
+use App\Models\JamMasuk;
+use App\Models\Kondisi;
+use App\Models\Semester;
+
 
 class AbsenController extends BaseController
 {
@@ -23,7 +31,7 @@ class AbsenController extends BaseController
         $absenModel = new Absen();
         $absen = $absenModel->getLastID();
         $data = [
-            'title' => 'Absen',
+            'title' => 'Absen Selesai',
             'absen' => $absen
         ];
         // dd($data);
@@ -31,7 +39,39 @@ class AbsenController extends BaseController
     }
     public function createAbsen()
     {
-        return view('pagesAsdos/CAbsen');
+        $modelHari = new Hari();
+        $a = $modelHari->findAll();
+
+        $modelSemester = new Semester();
+        $g = $modelSemester->findAll();
+
+        $modelMataKuliah = new MataKuliah();
+        $b = $modelMataKuliah->findAll();
+
+        $modelRuang = new Ruang();
+        $c = $modelRuang->findAll();
+
+        $modelKelas = new Kelas();
+        $d = $modelKelas->findAll();
+
+        $modelJamMasuk = new JamMasuk();
+        $e = $modelJamMasuk->findAll();
+
+        $modelKondisi = new Kondisi();
+        $f = $modelKondisi->findAll();
+
+        $data = [
+            'title' => 'Create Absen',
+            'hari' => $a,
+            'semester' => $g,
+            'matakuliah' => $b,
+            'ruang' => $c,
+            'kelas' => $d,
+            'jam' => $e,
+            'kondisi' => $f
+
+        ];
+        return view('pagesAsdos/CAbsen', $data);
     }
     public function simpanAbsen()
     {
@@ -39,12 +79,13 @@ class AbsenController extends BaseController
         if (!$this->validate([
             'nama_lengkap' => 'required',
             'npm_asdos' => 'required',
+            'semester' => 'required',
             'mata_kuliah' => 'required',
             'ruang' => 'required',
-            'kelas_praktikan' => 'required',
+            'kelas' => 'required',
             'hari' => 'required',
             'jam_masuk' => 'required',
-            'kondisi_lab' => 'required',
+            'kondisi' => 'required'
         ])) {
             return redirect()->to('CAbsen');
         }
@@ -52,12 +93,13 @@ class AbsenController extends BaseController
         $data = [
             'nama_lengkap' => $this->request->getPost('nama_lengkap'),
             'npm_asdos' => $this->request->getPost('npm_asdos'),
+            'semester' => $this->request->getPost('semester'),
             'mata_kuliah' => $this->request->getPost('mata_kuliah'),
             'ruang' => $this->request->getPost('ruang'),
-            'kelas_praktikan' => $this->request->getPost('kelas_praktikan'),
+            'kelas' => $this->request->getPost('kelas'),
             'hari' => $this->request->getPost('hari'),
             'jam_masuk' => $this->request->getPost('jam_masuk'),
-            'kondisi_lab' => $this->request->getPost('kondisi_lab'),
+            'kondisi' => $this->request->getPost('kondisi')
         ];
         $absenModel->save($data);
         return redirect()->to(base_url('/absenSelesai'));
@@ -67,8 +109,38 @@ class AbsenController extends BaseController
         $absenModel = new Absen();
         // dd($absenModel->getLastID());
         $absen = $absenModel->find($id);
+
+        $modelHari = new Hari();
+        $a = $modelHari->findAll();
+
+        $modelSemester = new Semester();
+        $g = $modelSemester->findAll();
+
+        $modelMataKuliah = new MataKuliah();
+        $b = $modelMataKuliah->findAll();
+
+        $modelRuang = new Ruang();
+        $c = $modelRuang->findAll();
+
+        $modelKelas = new Kelas();
+        $d = $modelKelas->findAll();
+
+        $modelJamMasuk = new JamMasuk();
+        $e = $modelJamMasuk->findAll();
+
+        $modelKondisi = new Kondisi();
+        $f = $modelKondisi->findAll();
+
+
         $data = [
             'title' => 'Edit Absen',
+            'hari' => $a,
+            'semester' => $g,
+            'matakuliah' => $b,
+            'ruang' => $c,
+            'kelas' => $d,
+            'jam' => $e,
+            'kondisi' => $f,
             'absen' => $absen
         ];
         return view('pagesAsdos/EAbsen', $data);
@@ -78,12 +150,13 @@ class AbsenController extends BaseController
         if (!$this->validate([
             'nama_lengkap' => 'required',
             'npm_asdos' => 'required',
+            'semester' => 'required',
             'mata_kuliah' => 'required',
             'ruang' => 'required',
-            'kelas_praktikan' => 'required',
+            'kelas' => 'required',
             'hari' => 'required',
             'jam_masuk' => 'required',
-            'kondisi_lab' => 'required',
+            'kondisi' => 'required'
         ])) {
             return redirect()->to('/EAbsen/' . $id);
         }
@@ -93,12 +166,13 @@ class AbsenController extends BaseController
         $data = [
             'nama_lengkap' => $this->request->getPost('nama_lengkap'),
             'npm_asdos' => $this->request->getPost('npm_asdos'),
+            'semester' => $this->request->getPost('semester'),
             'mata_kuliah' => $this->request->getPost('mata_kuliah'),
             'ruang' => $this->request->getPost('ruang'),
-            'kelas_praktikan' => $this->request->getPost('kelas_praktikan'),
+            'kelas' => $this->request->getPost('kelas'),
             'hari' => $this->request->getPost('hari'),
             'jam_masuk' => $this->request->getPost('jam_masuk'),
-            'kondisi_lab' => $this->request->getPost('kondisi_lab'),
+            'kondisi' => $this->request->getPost('kondisi')
         ];
         $absenModel->update($id, $data);
         return redirect()->to(base_url('/absenSelesai'));
