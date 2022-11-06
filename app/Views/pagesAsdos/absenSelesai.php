@@ -1,4 +1,4 @@
-<?= $this->extend('template') ?>
+<?= $this->extend('pagesAsdos/Astemplate') ?>
 <?= $this->section('content') ?>
 
 <div class="container">
@@ -20,11 +20,13 @@
                     <div class="row">
                         <div class="mt-2">
                             <a href="/EAbsen/<?= $absen->id ?>">Edit your response</a>
-
-
                         </div>
                     </div>
-
+                    <div class="row">
+                        <div class="mt-2">
+                            <a href="/CAbsen/">Add another response</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

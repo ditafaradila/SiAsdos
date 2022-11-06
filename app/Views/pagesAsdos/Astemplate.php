@@ -75,7 +75,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="/nilai" class="nav-link">
+              <a href="/Nilai" class="nav-link">
                 <i class="nav-icon fas fa-tasks"></i>
                 <p>
                   Nilai
@@ -84,7 +84,7 @@
             </li>
             <li class="nav-item">
               <a href="/CAbsen" class="nav-link">
-                <i class="nav-icon fas fa-tasks"></i>
+                <i class="nav-icon fas fa-list-alt"></i>
                 <p>
                   Absensi
                 </p>
