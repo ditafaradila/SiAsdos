@@ -1,4 +1,4 @@
-<?= $this->extend('template') ?>
+<?= $this->extend('pagesMahasiswa/PMtemplate') ?>
 <?= $this->section('content') ?>
 
 <div class="container">
@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">
                     <h4>
-                        <center> REKAPAN PRESENSI ASISTEN DOSEN 2022 </center>
+                        <center> REKAPAN PRESENSI MAHASISWA 2022 </center>
                     </h4>
                 </div>
                 <div class="card-body">
@@ -18,7 +18,7 @@
                                     <center>NO</center>
                                 </th>
                                 <th>
-                                    <center>Nama Lengkap</center>
+                                    <center>Nama</center>
                                 </th>
                                 <th>
                                     <center>NPM</center>
@@ -41,47 +41,41 @@
                                 <th>
                                     <center>Jam Masuk</center>
                                 </th>
-                                <th>
-                                    <center>Kondisi Ruangan</center>
-                                </th>
 
                             </tr>
                         </thred>
                         <tbody>
                             <?php $no = 1;
-                            foreach ($absen as $absenn) : ?>
+                            foreach ($absenMhs as $absenMhs) : ?>
                                 <tr>
                                     <th scope="row"><?= $no++ ?></th>
                                     <td>
-                                        <center><?= $absenn['nama_lengkap'] ?>
+                                        <center><?= $absenMhs['namaMhs'] ?>
                                     </td>
                                     </center>
                                     <td>
-                                        <center><?= $absenn['npm_asdos'] ?>
+                                        <center><?= $absenMhs['npmMhs'] ?>
                                     </td>
                                     </center>
                                     <td>
-                                        <center><?= $absenn['semester'] ?>
+                                        <center><?= $absenMhs['semester'] ?>
                                     </td>
                                     <td>
-                                        <center><?= $absenn['mata_kuliah'] ?>
+                                        <center><?= $absenMhs['mata_kuliah'] ?>
                                     </td>
                                     <td>
-                                        <center><?= $absenn['ruang'] ?>
+                                        <center><?= $absenMhs['ruang'] ?>
                                     </td>
                                     <td>
-                                        <center><?= $absenn['kelas'] ?>
-                                    </td>
-                                    </center>
-                                    <td>
-                                        <center><?= $absenn['hari'] ?>
+                                        <center><?= $absenMhs['kelas'] ?>
                                     </td>
                                     </center>
                                     <td>
-                                        <center><?= $absenn['jam_masuk'] ?>
+                                        <center><?= $absenMhs['hari'] ?>
                                     </td>
+                                    </center>
                                     <td>
-                                        <center><?= $absenn['kondisi'] ?>
+                                        <center><?= $absenMhs['jam_masuk'] ?>
                                     </td>
 
 
