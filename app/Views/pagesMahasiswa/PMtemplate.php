@@ -59,12 +59,27 @@
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <li class="nav-item">
-              <a href="Ashome" class="nav-link">
+              <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-calendar"></i>
                 <p>
                   Jadwal
+                  <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon"></i>
+                    <p>Jadwal AsDos</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/jadwalPiket" class="nav-link">
+                    <i class="nav-icon"></i>
+                    <p>Jadwal Piket</p>
+                  </a>
+                </li>
+              </ul>
             </li>
             <li class="nav-item">
               <a href="materi" class="nav-link">
@@ -75,16 +90,8 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="/nilai" class="nav-link">
-                <i class="nav-icon fas fa-tasks"></i>
-                <p>
-                  Nilai
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="/CAbsen" class="nav-link">
-                <i class="nav-icon fas fa-tasks"></i>
+              <a href="/CAbsenMhs" class="nav-link">
+                <i class="nav-icon fas fa-list-alt"></i>
                 <p>
                   Absensi
                 </p>
