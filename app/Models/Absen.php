@@ -9,7 +9,7 @@ class Absen extends Model
     protected $table            = 'absen';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
-    protected $allowedFields    = ['nama_lengkap', 'npm_asdos', 'mata_kuliah', 'ruang', 'kelas_praktikan', 'hari', 'jam_masuk', 'kondisi_lab'];
+    protected $allowedFields    = ['nama_lengkap', 'npm_asdos', 'semester', 'mata_kuliah', 'ruang', 'kelas', 'hari', 'jam_masuk', 'kondisi'];
 
     public function getLastID()
     {
