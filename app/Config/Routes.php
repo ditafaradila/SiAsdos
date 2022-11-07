@@ -53,11 +53,14 @@ $routes->get('/logout', 'MhsLogin::logout');
 //$routes->get('/PMmateri', 'MhsLogin::indexx');
 
 $routes->get('/Ashome', 'AsdosController::index');
+$routes->get('/PMhome', 'AsdosController::home');
 
 $routes->get('/profile', 'Profile::index');
-$routes->get('/editProfile', 'Profile::update');
+$routes->get('/edit/(:num)', 'Profile::edit/$1');
+$routes->post('/update/(:num)', 'Profile::update/$1');
 
 $routes->get('/PMmateri', 'MateriController::mahasiswa');
+$routes->get('/PMjadwalpiket', 'JadwalPiketController::jadwalPiket');
 
 $routes->get('/Nilai', 'Nilaicontrol::Nilai');
 $routes->post('/buat', 'Nilaicontrol::buat');
@@ -86,9 +89,10 @@ $routes->post('/update/(:num)', 'JadwalController::update/$1');
 $routes->get('/jadwalPiket', 'JadwalPiketController::index');
 $routes->get('/create', 'JadwalPiketController::create');
 $routes->post('/store', 'JadwalPiketController::store');
-$routes->get('/edit/(:num)', 'JadwalPiketController::edit/$1');
-$routes->post('/update/(:num)', 'JadwalPiketController::update/$1');
-$routes->delete('/delete/(:num)', 'JadwalPiketController::delete/$1');
+$routes->get('/ubah/(:num)', 'JadwalPiketController::ubah/$1');
+$routes->post('/up/(:num)', 'JadwalPiketController::up/$1');
+$routes->delete('/hapus/(:num)', 'JadwalPiketController::hapus/$1');
+
 
 //pengumuman asdos
 $routes->get('pengumuman', 'PengumumanController::index');
@@ -124,7 +128,7 @@ $routes->post('/Download/(:num)', 'MateriController::Download/$1');
 
 $routes->get('/pendaftarAsdos', 'Pendaftaran::viewPendaftar');
 $routes->get('/daftarAsdos', 'Pendaftaran::index');
-$routes->post('/simpanDaftar','Pendaftaran::simpanDaftar');
+$routes->post('/simpanDaftar', 'Pendaftaran::simpanDaftar');
 
 $routes->get('/(:any)', 'Pages::view/$1');
 $routes->get('/(:any)', 'PagesAsdos::view/$1');
