@@ -1,7 +1,7 @@
 <?= $this->extend('template') ?>
 <?= $this->section('content') ?>
 
-<form method="POST" action="/update/<?= $JadwalPiket['id'] ?>">
+<form method="POST" action="/up/<?= $jadwalPiket['id'] ?>">
     <div class="row">
         <div class="col-6">
             <div class="mb-3">
