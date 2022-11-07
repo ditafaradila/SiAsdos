@@ -27,7 +27,7 @@ class JadwalPiketController extends BaseController
             'title' => 'JadwalPiket',
             'jadwalpiket' => $jadwalpiket
         ];
-        return view('pages/jadwalPiket', $data);
+        return view('pagesMahasiswa/PMjadwalpiket', $data);
     }
 
     public function create()
@@ -55,19 +55,19 @@ class JadwalPiketController extends BaseController
         return redirect()->to('jadwalPiket');
     }
 
-    public function edit($id)
+    public function ubah($id)
     {
         $jadwalpiketModel = new JadwalPiket();
         $jadwalpiket = $jadwalpiketModel->find($id);
 
         $data = [
-            'title' => 'Edit JadwalPiket',
+            'title' => 'Ubah JadwalPiket',
             'jadwalPiket' => $jadwalpiket
         ];
         return view('pages/ubah', $data);
     }
 
-    public function delete($id)
+    public function hapus($id)
     {
         $jadwalpiketModel = new JadwalPiket();
         $jadwalpiketModel->delete($id);
@@ -75,7 +75,7 @@ class JadwalPiketController extends BaseController
         return redirect()->to('jadwalPiket');
     }
 
-    public function update($id)
+    public function up($id)
     {
         if (!$this->validate([
             'jam' => 'required',
@@ -100,7 +100,7 @@ class JadwalPiketController extends BaseController
             'lab' => $this->request->getVar('lab')
         ];
 
-        $jadwalpiketModel->update($id, $data);
+        $jadwalpiketModel->up($id, $data);
         return redirect()->to('jadwalPiket');
     }
 }
