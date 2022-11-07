@@ -77,7 +77,7 @@ class MateriController extends BaseController
 
         $materiasdosModel = new MateriAsdos();
         $dataBerkas = $this->request->getFile('berkas');
-        $fileName = $dataBerkas->getRandomName();
+        $fileName = $dataBerkas->getName();
         $materiasdosModel->insert([
             'berkas' => $fileName,
             'namate' => $this->request->getPost('namate'),
