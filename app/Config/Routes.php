@@ -122,6 +122,10 @@ $routes->post('/Update/(:num)', 'MateriController::Update/$1');
 $routes->delete('/Delete/(:num)', 'MateriController::Delete/$1');
 $routes->post('/Download/(:num)', 'MateriController::Download/$1');
 
+$routes->get('/pendaftarAsdos', 'Pendaftaran::viewPendaftar');
+$routes->get('/daftarAsdos', 'Pendaftaran::index');
+$routes->post('/simpanDaftar','Pendaftaran::simpanDaftar');
+
 $routes->get('/(:any)', 'Pages::view/$1');
 $routes->get('/(:any)', 'PagesAsdos::view/$1');
 /*
