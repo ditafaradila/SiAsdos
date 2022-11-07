@@ -1,4 +1,4 @@
-<?= $this->extend('pagesAsdos/Astemplate') ?>
+<?= $this->extend('pagesMahasiswa/PMtemplate') ?>
 <?= $this->section('content') ?>
 
 <div class="container">
@@ -22,6 +22,7 @@
                         <th scope="col">Pertemuan</th>
                         <th scope="col">Semester</th>
                         <th scope="col">File</th>
+                        <th scope="col">Aksi</th>
                     </tr>
                 </thead>
                 <tbody class="table-group-divider">
@@ -34,7 +35,8 @@
                             <td><?= $mtr['matkul'] ?></td>
                             <td><?= $mtr['pertemuan'] ?></td>
                             <td><?= $mtr['semester'] ?></td>
-                            <td><?= $mtr['berkas'] ?> <a class=" btn btn-primary" href="<?= "/uploads" ?>"><i class=" fa fa-download"></i></a></td>
+                            <td><?= $mtr['berkas'] ?></td>
+                            <td><a class="btn btn-info" href="<?= base_url(); ?>/MateriController/Download/<?= $mtr['id'] ?>">Download</a></td>
                         </tr>
                     <?php
                     endforeach

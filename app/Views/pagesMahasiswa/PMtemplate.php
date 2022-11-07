@@ -68,13 +68,13 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
+                  <a href="/PMhome" class="nav-link">
                     <i class="nav-icon"></i>
                     <p>Jadwal AsDos</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="/jadwalPiket" class="nav-link">
+                  <a href="/PMjadwalpiket" class="nav-link">
                     <i class="nav-icon"></i>
                     <p>Jadwal Piket</p>
                   </a>
@@ -82,7 +82,7 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a href="materi" class="nav-link">
+              <a href="/PMmateri" class="nav-link">
                 <i class="nav-icon fas fa-bell"></i>
                 <p>
                   Materi
@@ -94,6 +94,14 @@
                 <i class="nav-icon fas fa-list-alt"></i>
                 <p>
                   Absensi
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/daftarAsdos" class="nav-link">
+                <i class="nav-icon fas fa-list-alt"></i>
+                <p>
+                  Pendaftaran Asdos
                 </p>
               </a>
             </li>
