@@ -38,7 +38,7 @@
                     <td>
                         <div class="d-flex">
                             <a href="/ubah/<?= $jdlp['id'] ?>" type="button" class="btn btn-warning"><i class="fa fa-pen"></i>Edit</a>
-                            <form method="POST" action="/delete/<?= $jdlp['id'] ?>">
+                            <form method="POST" action="/hapus/<?= $jdlp['id'] ?>">
                                 <input type="hidden" name="_method" value="DELETE">
                                 <button type="submit" name="submit" class="btn btn-danger"><i class="fa fa-trash"></i>Delete</button>
                             </form>
