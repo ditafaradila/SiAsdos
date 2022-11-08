@@ -71,6 +71,7 @@ $routes->post('/ubah/(:num)', 'Nilaicontrol::ubah/$1');
 $routes->delete('/deleteNilai/(:num)', 'NilaiControl::delete/$1');
 $routes->get('/PengumumanLain', 'Nilaicontrol::PengumumanLain');
 $routes->get('/', 'Home::index');
+$routes->get('/Nilaimhs', 'Nilaicontrol::Nilaimhs');
 
 //PengumumanControl
 $routes->post('/create', 'PengumumanControl::create');
