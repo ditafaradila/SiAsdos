@@ -9,7 +9,19 @@ class Nilaicontrol extends BaseController
 {
     public function Nilai()
     {
-        return view('pagesAsdos/Nilai');
+        $kurmodel = new Kurikulum();
+        $kumpkuri = $kurmodel->findAll();
+        $mkModel = new Mata_kuliah();
+        $values = $mkModel->findAll();
+        $kelas = new Kelas();
+        $kls = $kelas->findAll();
+        $data = [
+            'title' => 'Kurikulum',
+            'p' => $kumpkuri,
+            'values' => $values,
+            'kls'=>$kls
+        ];
+        return view('pagesAsdos/Nilai', $data);
     }
     public function index()
     {
@@ -22,6 +34,18 @@ class Nilaicontrol extends BaseController
         ];
 
         return view('pagesAsdos/listNilai', $data);
+    }
+    public function Nilaimhs()
+    {
+        $nilaimol = new Nilai();
+        $value = $nilaimol->findAll();
+
+        $data = [
+            'title' => 'Data Nilai',
+            'value' => $value
+        ];
+
+        return view('pagesMahasiswa/Nilaimhs', $data);
     }
     public function tambah()
     {
@@ -59,9 +83,15 @@ class Nilaicontrol extends BaseController
     public function edit($id)
     {
         $AnnounceModel = new Nilai();
+        $kurmodel = new Kurikulum();
+        $kumpkuri = $kurmodel->findAll();
+        $mkModel = new Mata_kuliah();
+        $values = $mkModel->findAll();
         $data = [
             'value' => $AnnounceModel->find($id),
-            'title' => 'Edit Data'
+            'title' => 'Edit Data',
+            'p' => $kumpkuri,
+            'values' => $values
         ];
 
         return view('pagesAsdos/ubahNilai', $data);
