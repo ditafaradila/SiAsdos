@@ -12,13 +12,14 @@
           <div class="p-4">
             <a href="/tambah" type="button" class="btn btn-primary mb-3">Tambah</a>
             <!-- /.card-header -->
-            <?php $no = 1;
-            foreach ($value as $p) : ?>
-              <div class="card-body">
-                <table id="example2" class="table table-bordered table-hover">
+            <div class="card-body">
+              <table id="example2" class="table table-bordered table-hover">
+                
+                
                   <thead>
+                  
                     <tr>
-                      <th></th>
+                      <th>No</th>
                       <th>Mata Kuliah</th>
                       <th>Kurikulum</th>
                       <th>Nama</th>
@@ -29,6 +30,8 @@
                     </tr>
                   </thead>
                   <tbody>
+                  <?php $no = 1;
+                  foreach ($value as $p) : ?>
                     <tr>
                       <th scope="row"><?= $no++ ?></th>
                       <td><?= $p['mk'] ?></td>
@@ -45,14 +48,16 @@
                             <button type="submit" class="btn btn-danger">Delete</button>
                           </form>
                         </div>
-              </div>
-              </td>
-              </tr>
-              </tfoot>
-              </table>
+            </div>
+            </td>
+            </tr>
+            <?php endforeach ?>
+            </tfoot>
+          
+          </table>
           </div>
-        <?php endforeach ?>
-        <!-- /.card-body -->
+
+          <!-- /.card-body -->
         </div>
         <!-- /.card -->
         <?= $this->endSection('content'); ?>
