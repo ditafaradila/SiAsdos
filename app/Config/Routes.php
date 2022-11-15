@@ -2,6 +2,8 @@
 
 namespace Config;
 
+use App\Controllers\Nilaicontrol;
+
 use function PHPUnit\Framework\any;
 
 // Create a new instance of our RouteCollection class.
@@ -71,16 +73,18 @@ $routes->post('/ubah/(:num)', 'Nilaicontrol::ubah/$1');
 $routes->delete('/deleteNilai/(:num)', 'NilaiControl::delete/$1');
 $routes->get('/PengumumanLain', 'Nilaicontrol::PengumumanLain');
 $routes->get('/', 'Home::index');
-$routes->get('/Nilaimhs', 'Nilaicontrol::Nilaimhs');
 
 //PengumumanControl
-$routes->post('/create', 'PengumumanControl::create');
-$routes->get('/store', 'PengumumanControl::store');
-$routes->get('/pages', 'PengumumanControl::index');
-$routes->get('/edit/(:num)', 'PengumumanControl::edit/$1');
-$routes->post('/update/(:num)', 'PengumumanControl::update/$1');
-$routes->delete('/delete/(:num)', 'PengumumanControl::delete/$1');
-$routes->get('/PengumumanLain', 'PengumumanControl::PengumumanLain');
+$routes->get('/Nilai', 'Nilaicontrol::Nilai');
+$routes->post('/buat', 'Nilaicontrol::buat');
+$routes->get('/tambah', 'Nilaicontrol::tambah');
+$routes->get('/pagesNilai', 'Nilaicontrol::index');
+$routes->get('/editNilai/(:num)', 'NilaiControl::edit/$1');
+$routes->post('/ubah/(:num)', 'Nilaicontrol::ubah/$1');
+$routes->delete('/deleteNilai/(:num)', 'NilaiControl::delete/$1');
+$routes->get('/PengumumanLain', 'Nilaicontrol::PengumumanLain');
+$routes->get('/', 'Home::index');
+$routes->get('/Nilaimhs', 'Nilaicontrol::Nilaimhs');
 
 //JadwalController
 $routes->get('/', 'Home::index');
@@ -125,11 +129,13 @@ $routes->post('/Store', 'MateriController::Store');
 $routes->get('/Emateri/(:num)', 'MateriController::Edit/$1');
 $routes->post('/Update/(:num)', 'MateriController::Update/$1');
 $routes->delete('/Delete/(:num)', 'MateriController::Delete/$1');
-$routes->post('/Download/(:num)', 'MateriController::Download/$1');
+$routes->get('/Download/(:num)', 'MateriController::Download/$1');
 
 $routes->get('/pendaftarAsdos', 'Pendaftaran::viewPendaftar');
 $routes->get('/daftarAsdos', 'Pendaftaran::index');
 $routes->post('/simpanDaftar', 'Pendaftaran::simpanDaftar');
+$routes->get('/download/(:num)', 'Pendaftaran::download/$1');
+
 
 $routes->get('/(:any)', 'Pages::view/$1');
 $routes->get('/(:any)', 'PagesAsdos::view/$1');
