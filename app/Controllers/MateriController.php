@@ -163,10 +163,9 @@ class MateriController extends BaseController
     //     $materiasdosModel->update($id, $materiasdosModel);
     //     return redirect()->to('materi');
     // }
-    public function Download($id)
-    {
+    function Download($id){
         $materiasdosModel = new MateriAsdos();
-        $materi = $materiasdosModel->find($id);
-        return $this->response->download($materi->materiasdosModel);
+        $data = $materiasdosModel->find($id);
+        return $this->response->download('uploads/'. $data->berkas, null);
     }
 }

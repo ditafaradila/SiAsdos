@@ -16,6 +16,19 @@ class Pendaftaran extends BaseController
     }
 
     public function simpanDaftar(){
+        if (!$this->validate([
+            'cv' => [
+                'rules' => 'uploaded[cv]|max_size[cv,5120]',
+                'errors' => [
+                    'uploaded' => 'Harus Ada File yang diupload',
+                    'max_size' => 'Ukuran File Maksimal 2 MB'
+                ]
+            ]
+        ])) {
+            session()->setFlashdata('error', $this->validator->listErrors());
+            return redirect()->back()->withInput();
+        }
+        
         $daftarModel = new Daftar();
         $datacv = $this->request->getFile('cv');
         $fileNamecv = $datacv->getName();
@@ -38,6 +51,12 @@ class Pendaftaran extends BaseController
         $daftarModel = new Daftar();
         $data['pendaftaran'] = $daftarModel->get_data();
 
-        return view('pagesAsdos/pendaftarAsdos', $data);
+        return view('pages/pendaftarAsdos', $data);
+    }
+
+    function download($id_daftar){
+        $daftarModel = new Daftar();
+        $data = $daftarModel->find($id_daftar);
+        return $this->response->download('CV/'. $data->cv, null);
     }
 }
