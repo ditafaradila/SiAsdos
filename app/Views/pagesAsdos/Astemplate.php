@@ -2,134 +2,126 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sistem Informasi Asdos</title>
 
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="/assets/AdminLTE/plugins/fontawesome-free/css/all.min.css">
-  <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="/assets/AdminLTE/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="/assets/AdminLTE/dist/css/adminlte.min.css">
-  <link rel="stylesheet" href="/assets/AdminLTE/plugins/summernote/summernote-bs4.min.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>ADMIN</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="/assetsadmin/adminstart/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="/assetsadmin/adminstart/css/sb-admin-2.min.css" rel="stylesheet">
+
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed">
-  <!-- Site wrapper -->
-  <div class="wrapper">
-    <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand navbar-white navbar-light bg-info">
-      <div class="container">
-        <!-- Left navbar links -->
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <!-- /.navbar -->
+<body id="page-top">
 
-    <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4 bg-info">
-      <!-- Brand Logo -->
-      <a href="#" class="brand-link">
-        <img src="/assets/AdminLTE/dist/img/unila.jpg" alt="Person Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">SISTEM INFORMASI</span>
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">Asisten Dosen</div>
       </a>
 
       <!-- Sidebar -->
       <div class="sidebar">
         <!-- Sidebar user (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-          <div class="image">
+          <!-- <div class="image">
             <img src="/assets/AdminLTE/dist/img/rs.jpeg" class="img-circle elevation-2" alt="User Image">
-          </div>
+          </div> -->
           <div class="info">
             <a href="/profile" class="d-block"><?= session()->get('nama'); ?></a>
           </div>
         </div>
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="/Ashome">
+            <i class="fas fa-calendar"></i>
+            <span>Jadwal</span>
+          </a>
+        </li>
 
-        <!-- Sidebar Menu -->
-        <nav class="mt-2">
-          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-            <li class="nav-item">
-              <a href="Ashome" class="nav-link">
-                <i class="nav-icon fas fa-calendar"></i>
-                <p>
-                  Jadwal
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="materi" class="nav-link">
-                <i class="nav-icon fas fa-bell"></i>
-                <p>
-                  Materi
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="/Nilai" class="nav-link">
-                <i class="nav-icon fas fa-tasks"></i>
-                <p>
-                  Nilai
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="/CAbsen" class="nav-link">
-                <i class="nav-icon fas fa-list-alt"></i>
-                <p>
-                  Absensi
-                </p>
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <!-- /.sidebar-menu -->
-      </div>
-      <!-- /.sidebar -->
-    </aside>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="/materi">
+            <i class="fas fa-bell"></i>
+            <span>Materi</span>
+          </a>
+        </li>
 
-    <!-- Main content -->
-    <div class="content-wrapper">
-      <div class="container">
-        <?= $this->renderSection('content') ?>
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="/Nilai">
+            <i class="fas fa-tasks"></i>
+            <span>Nilai</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="/CAbsen">
+            <i class="fas fa-list-alt"></i>
+            <span>Absensi Asisten Dosen</span>
+          </a>
+        </li>
+        <!-- Nav Item - Utilities Collapse Menu -->
+
+
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+
+        <!-- Sidebar Toggler (Sidebar) -->
+        <div class="text-center d-none d-md-inline">
+          <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+
+
+    </ul>
+    <!-- End of Sidebar -->
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div class="content-wrapper">
+        <div class="container">
+          <?= $this->renderSection('content') ?>
+        </div>
+
       </div>
     </div>
-    <!-- /.container-fluid -->
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
+    <!-- Bootstrap core JavaScript-->
+    <script src="/assetsadmin/adminstart/vendor/jquery/jquery.min.js"></script>
+    <script src="/assetsadmin/adminstart/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
+    <!-- Core plugin JavaScript-->
+    <script src="/assetsadmin/adminstart/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- jQuery -->
-  <script src="/assets/AdminLTE/plugins/jquery/jquery.min.js"></script>
-  <!-- Bootstrap 4 -->
-  <script src="/assets/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- overlayScrollbars -->
-  <script src="/assets/AdminLTE/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-  <!-- AdminLTE App -->
-  <script src="/assets/AdminLTE/dist/js/adminlte.min.js"></script>
-  <!-- AdminLTE for demo purposes -->
-  <script src="/assets/AdminLTE/dist/js/demo.js"></script>
-  <script src="/assets/AdminLTE/plugins/summernote/summernote-bs4.min.js"></script>
-  <script>
-    $(function() {
-      $('#deskripsi').summernote()
-    })
-  </script>
+    <!-- Custom scripts for all pages-->
+    <script src="/assetsadmin/adminstart/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="/assetsadmin/adminstart/vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="/assetsadmin/adminstart/js/demo/chart-area-demo.js"></script>
+    <script src="/assetsadmin/adminstart/js/demo/chart-pie-demo.js"></script>
+    <script>
+      $(function() {
+        $('#deskripsi').summernote()
+      })
+    </script>
 </body>
 
 </html>
