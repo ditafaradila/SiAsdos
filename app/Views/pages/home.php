@@ -2,10 +2,10 @@
 <?= $this->section('content') ?>
 
 <div class="container">
-  <div class="card">
+  <div class="col-md-12 mt-5">
     <!--judul-->
-    <div class="card-header bg-secondary text-white">
-      Data Jadwal Asisten Dosen
+    <div class="card-header bg-info text-white">
+      <center> Data Jadwal Asisten Dosen </center>
     </div>
 
     <div class="card-body">
@@ -36,7 +36,7 @@
               <td><?= $asds['jumat'] ?></td>
               <td>
                 <div class="d-flex">
-                  <a href="/edit/<?= $asds['id'] ?>" type="button" class="btn btn-warning"><i class="fa fa-pen"></i>Edit</a>
+                  <a href="/edit/<?= $asds['id'] ?>" type="button" class="btn btn-warning"><i class="fa fa-pen"></i></a>
                 </div>
               </td>
             </tr>
