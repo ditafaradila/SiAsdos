@@ -114,9 +114,14 @@
 
 
     <!-- Main Content -->
-    <div class="content-wrapper">
-      <div class="container">
-        <?= $this->renderSection('content') ?>
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div class="content-wrapper">
+        <div class="container">
+          <?= $this->renderSection('content') ?>
+        </div>
+
       </div>
     </div>
 
